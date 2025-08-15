@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="rgba(106, 103, 247)"
+                    class="bi bi-bootstrap" viewBox="0 0 16 16">
+                    <path
+                        d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                    <path
+                        d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3z" />
+                </svg>
+                <h1><span class="build">Build</span><span class="it">it</span></h1>
+            </div>
+            <nav>
+
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="builder-section">
+            <div class="input-panel">
+                <h2>Describe Your Website</h2>
+                <p>Tell our AI what kind of website you need. Be as detailed as possible!</p>
+                <form id="website-builder-form">
+                    <div class="form-group">
+                        <label for="description">Website Description:</label>
+                        <textarea id="description"
+                            placeholder="E.g., A sleek portfolio for a freelance photographer, a vibrant e-commerce site for a local bakery, a minimalist blog for tech reviews..."
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="industry">Industry/Niche:</label>
+                        <input type="text" id="industry"
+                            placeholder="e.g., Photography, E-commerce, Tech, Health & Wellness">
+                    </div>
+                    <div class="form-group">
+                        <label for="tone">Tone/Style:</label>
+                        <select id="tone">
+                            <option value="professional">Professional</option>
+                            <option value="creative">Creative</option>
+                            <option value="modern">Modern</option>
+                            <option value="friendly">Friendly</option>
+                            <option value="minimalist">Minimalist</option>
+                            <option value="vibrant">Vibrant</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="features">Key Features (comma-separated):</label>
+                        <input type="text" id="features"
+                            placeholder="e.g., Portfolio gallery, Contact form, Blog, Online store, Booking system">
+                    </div>
+                    <button type="submit" id="build-button">
+                        <span class="button-text">Generate Website</span>
+                        <span class="spinner" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="preview-panel">
+                <h2>Your AI-Generated Website Preview</h2>
+                <div class="btnsection">
+                    <button id="fullscreen-btn"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                            fill="currentColor" class="bi bi-fullscreen" viewBox="0 0 16 16">
+                            <path
+                                d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5M.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5" />
+                        </svg></button>
+                    <button id="cpy"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-clipboard-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2" />
+                        </svg></button>
+                    <button id="download"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                            fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0" />
+                        </svg></button>
+                </div>
+                <div class="preview-area" id="preview-area">
+                    <div class="placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="rgba(106, 103, 247)"
+                            class="bi bi-box-arrow-in-down-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M9.636 2.5a.5.5 0 0 0-.5-.5H2.5A1.5 1.5 0 0 0 1 3.5v10A1.5 1.5 0 0 0 2.5 15h10a1.5 1.5 0 0 0 1.5-1.5V6.864a.5.5 0 0 0-1 0V13.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                            <path fill-rule="evenodd"
+                                d="M5 10.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1H6.707l8.147-8.146a.5.5 0 0 0-.708-.708L6 9.293V5.5a.5.5 0 0 0-1 0z" />
+                        </svg>
+                        <p>Your beautiful website will appear here!</p>
+                        <p>Start by describing it on the left.</p>
+                    </div>
+                    <iframe id="website-preview"
+                        srcdoc="<p style='font-family: sans-serif; text-align: center; color: #555; margin-top: 50px;'>Your website will be generated here.</p>"
+                        frameborder="0"></iframe>
+                    <div class="loading-overlay" style="display: none;">
+                        <div class="loader"></div>
+                        <p>Generating your masterpiece...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Buildit. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
