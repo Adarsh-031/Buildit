@@ -1,6 +1,6 @@
 # Buildit
 
-Buildit is a full-stack web application with a Node.js backend and a modern HTML/CSS/JavaScript frontend. It provides a seamless platform for building, managing, and interacting with web projects.
+Buildit is a full-stack web application with a Node.js backend and a modern HTML/CSS/JavaScript frontend. It provides a seamless platform for building and interacting with web projects.
 
 ## Features
 - Node.js backend for API and server logic
@@ -26,3 +26,4 @@ Buildit is a full-stack web application with a Node.js backend and a modern HTML
 
 ## License
 MIT
+
