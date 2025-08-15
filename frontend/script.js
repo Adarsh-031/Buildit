@@ -27,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const features = document.getElementById('features').value;
 
         try {
-            const response = await fetch("http://localhost:3000/generate", {
+            const response = await fetch("https://buildit-aeni.onrender.com/generate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ description, industry, tone, features })
             });
 
             const data = await response.json();
-            // Assume first HTML file in AI response is the main page
+            
             const mainFile = data.code;
 
             function Download(file, text) {
