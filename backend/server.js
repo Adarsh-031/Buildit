@@ -18,7 +18,7 @@ app.post("/generate", async (req, res) => {
     const model = ai.getGenerativeModel({
         model: "gemini-2.5-pro",
         systemInstruction: `You are a code generator with specialization in web development.
-Return ONLY valid JSON. The generated code must be properly formatted. For all designs I ask you to make, have them be beautiful and responsive, not cookie cutter. Make webpages that are fully featured and worthy for production.The codes must be in a single HTML.`,
+Return ONLY valid JSON. The generated code must be properly formatted. For all designs I ask you to make, have them be beautiful and responsive, not cookie cutter. Make webpages that are fully featured and worthy for production.The codes must be in a single HTML.Last but not the least mak sure the images you use are valid and visible`,
         generationConfig: {
             responseMimeType: "application/json",
             responseSchema: {
