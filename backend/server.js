@@ -44,7 +44,6 @@ Return ONLY valid JSON. The generated code must be properly formatted. For all d
         });
 
         const data = JSON.parse(result.response.text());
-        console.log(data);
         res.json(data);
     } catch (err) {
         console.error(err);
