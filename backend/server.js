@@ -12,6 +12,19 @@ app.use(express.json());
 
 const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+function extractJSON(text) {
+  try {
+    return JSON.parse(text);
+  } catch {
+    const match = text.match(/\{[\s\S]*\}/);
+    if (match) {
+      return JSON.parse(match[0]);
+    }
+    throw new Error("No valid JSON found in response");
+  }
+}
+
+
 app.post("/generate", async (req, res) => {
     const { description, industry, tone, features } = req.body;
 
@@ -42,10 +55,14 @@ Return ONLY valid JSON. The generated code must be properly formatted. For all d
         const result = await model.generateContent({
             contents: [{ role: "user", parts: [{ text: prompt }] }]
         });
-        console.log(result);
-        const data = JSON.parse(result.response.text());
-        console.log(data);
-        res.json(data);
+        let data;
+        try {
+  data = extractJSON(await result.response.text());
+            res.send(data);
+} catch (err) {
+  console.error("❌ Failed to extract JSON:", await result.response.text());
+  return res.status(500).json({ error: "Invalid JSON response from Gemini" });
+}
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Failed to generate website" });
