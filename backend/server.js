@@ -42,7 +42,7 @@ Return ONLY valid JSON. The generated code must be properly formatted. For all d
         const result = await model.generateContent({
             contents: [{ role: "user", parts: [{ text: prompt }] }]
         });
-
+        console.log(result);
         const data = JSON.parse(result.response.text());
         res.json(data);
     } catch (err) {
