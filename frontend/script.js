@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (mainFile) {
                 websitePreview.srcdoc = mainFile;
-                websitePreview.style = "display:block;border:none;height:100vh;width=100vw;";
+                websitePreview.style = "display:block;border:none;height:100vh;width:100vw;";
                 document.querySelector('.btnsection').style.display = "flex";
                 document.getElementById('fullscreen-btn').onclick = () => {
                     const newTab = window.open('', '_blank');
