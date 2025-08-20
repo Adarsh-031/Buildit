@@ -43,7 +43,7 @@ Return ONLY valid JSON. The generated code must be properly formatted. For all d
             contents: [{ role: "user", parts: [{ text: prompt }] }]
         });
         console.log(result);
-        const data = JSON.parse(result.response.candidates[0].text());
+        const data = JSON.parse(result.response.text());
         console.log(data);
         res.json(data);
     } catch (err) {
